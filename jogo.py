@@ -1,21 +1,27 @@
-class Personagem:
-  def __init__(self, name, hp, atk, defs): #self representa a Classe "Personagem". Os demais são parametros de entrada
-    self.name = name #Como se estivessemos criando uma nova váriavel dentro do self, ou seja, deste personagem em si.
-    self.hp = hp
-    self.atk = atk
-    self.defs = defs
+import random
 
-def Attack(attacker, defender):
-  defender.hp -= attacker.atk
-  print(attacker.name + " atingiu " + defender.name + " com um golpe de: " + str(attacker.atk) + 
-        " de poder! \n" + defender.name + " tem agora " + str(defender.hp) + " de vida \n")
+class Personagem():
+  def __init__(self, n, hp, spells):
+    self.name = n
+    self.health = hp
+    self.spells = spells
 
-hero = Personagem("Gustavo", 45, 9, 34)
-vilain = Personagem("thanos", 50, 35, 31)
+class Spell():
+  def __init__(self, n, dmg):
+    self.name = n
+    self.damage = dmg
+
+def CastSpell(attacker, defender):
+  rSpellIndex = random.randint(0, len(attacker.spells)-1) >
+  spell = attacker.spells[rSpellIndex] #Pega a spell da li>
+
+  print(attacker.name + " usou a habilidade: " + spell.nam>
+
+  defender.health -= spell.damage #Remove o dano da spell >
+
+  print(defender.name + " foi atingido com " + str(spell.d>
+  print(defender.name + " está agora com " + str(defender.>
 
 
-while hero.hp > 0 and vilain.hp > 0:
-  Attack(hero, vilain)
-  if vilain.hp <= 0:
-    break
-  Attack(vilain, hero)
+heroSpells = [Spell("choque fantasmagorico", 100), Spell(">
+enemySpells = [Spell("golpe fantastico", 100), Spell("dest>
